@@ -24,7 +24,7 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            newTask: { title: '', description: '' },
+            newTask: { title: '', description: '', status: '',},
         };
     },
     methods: {

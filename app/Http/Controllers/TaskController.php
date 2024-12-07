@@ -36,7 +36,7 @@ class TaskController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|string|max:255',
-            'description' => 'nullable|string',
+            'description' => 'nullable|string'
         ]);
 
         $task->update($validated);
@@ -48,5 +48,17 @@ class TaskController extends Controller
     {
         $task->delete();
         return response()->json(null, 204);
+    }
+
+    public function update_task_status(Request $request) {
+        $request->validate([
+            'id' => 'required',
+            'status' => 'required'
+        ]);
+
+        Task::where('id', $request->id)->update(['status' => $request->status]);
+        
+        $task = Task::find($request->id);
+        return response()->json($task);
     }
 }

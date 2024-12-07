@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('description')->nullable();
+            $table->enum('status', ['todo', 'in_progress', 'completed'])->default('todo');
             $table->timestamps();
         });
     }

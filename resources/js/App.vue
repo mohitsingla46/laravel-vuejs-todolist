@@ -4,6 +4,7 @@
             <h1>Task Manager</h1>
             <nav>
                 <router-link to="/">Task List</router-link>
+                <router-link to="/charts">Charts</router-link>
                 <router-link to="/about">About</router-link>
             </nav>
         </header>
